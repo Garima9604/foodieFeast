@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .order-navbar{
+            display: flex;
+            flex-direction: row;
+            /* justify-content: space-between; */
+            gap: 40px;
+            background: #000;
+            padding: 20px;
+        }
+        .order-navbar a{
+            font-size: 30px;
+            color: white;
+            text-decoration: none;
+            padding: 30px;
+        }
+        a:hover{
+            text-shadow: 1px 3px red;
+        }
+        a.active{
+            text-decoration: underline;
+        }
+        
+
+        .mainCard{
+            border: 2px solid black;
+            padding: 10px;
+        }
+        .card{
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            margin-bottom: 10px;
+            border-radius: 20px ;
+            box-shadow: inset 1px 2px 4px 4px ;
+        }
+        .detail{
+            padding: 30px;
+            font-size: 20px;
+        }
+        @media screen and (max-width : 600px){
+            .card{
+                display: block;
+            }
+            .order-navbar{
+                flex-direction: column;
+                column-gap: 20px;
+            }
+            .order-navbar img{
+                margin: auto;
+            }
+            .order-navbar a{
+                padding: 10px;
+                margin: auto;
+            }
+        }
+        
+        .heading{
+            text-align: center;
+            border: 0.1px solid black;
+            margin: 10px 0px;
+            padding: 5px;
+            box-shadow: inset 1px 1px 2px 2px;
+            border-radius: 20px;
+        }
+
+        .footer{
+            color: white;
+            text-align: center;
+            height: 400px;
+            border: 2px solid black;
+            background: url("../homepage_Images/footer-bg.avif");
+            display: flex;
+            justify-content: space-around;
+        }
+        .footer-box{
+            width: 200px;
+            padding: 30px;
+            height: 250px;
+        }
+        .footer-h3{
+            font-size: 1.8rem;
+            padding: 10px;
+        }
+        .footer-social-media{
+            display: flex;
+            justify-content: space-around;
+        }
+        .footer-img{
+            height: 30px;
+        }
+        .footer-para{
+            font-size: 20px;
+            padding: 10px;
+        }
+        input[type="text"] , input[type="tel"] , textarea{
+            width: 90%;
+            padding: 5px;
+            margin: 5px;
+            border-radius: 10px;
+            text-align: left;
+        }
+        .footer-btn{
+            width: 60px;
+            color: black;
+            border-radius: 10px;
+            padding: 5px;
+            cursor: pointer;
+        }
+        .footer-btn:hover{
+            background: gray;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="order-navbar">
+        <img class="navbar-img" src="../foodieFeast.png" alt="image" style="height: 100px; border-radius: 50%;">
+        <a class="navbar-a links" href="../homepage.html">Home</a>
+        <a class="navbar-a links" href="../Menu/menu.html">Menu</a>
+        <a class="navbar-a active links" href="../Order/order.html">Order</a>
+    </div>
+
+    <div class="mainCard">
+        
+        <h2 class="heading">Recent Orders</h2>
+        <div class="card">
+            <img src="../food-item-pages/foodItemImages/breakfast3.jpg" alt="image" style="height: 100px; border-radius: 20px;">
+            <div class="dishname detail">Dish Name</div>
+            <div class="quantity detail">Quantity : 2</div>
+            <div class="resname detail">Total Price : Rs.300</div>
+            <div class="status detail">Status : Delivered</div>
+            <button class="clickbtn" style="height: 30px; margin: 20px; border-radius: 10px;" onclick="myFunction()">More</button>
+        </div>
+
+        <h2 class="heading">Past Month Orders</h2>
+        <div class="card">
+            <img src="../food-item-pages/foodItemImages/sweet4.webp" alt="image" style="height: 100px; border-radius: 20px;">
+            <div class="dishname detail">Dish Name</div>
+            <div class="quantity detail">Quantity : 2</div>
+            <div class="resname detail">Total Price : Rs.400</div>
+            <div class="status detail">Status : Delivered</div>
+            <button class="clickbtn" style="height: 30px; margin: 20px; border-radius: 10px;" onclick="myFunction()">More</button>
+        </div>
+
+        <h2 class="heading">Previous Orders</h2>
+        <div class="card">
+            <img src="../food-item-pages/foodItemImages/chinese4.webp" alt="image" style="height: 100px; border-radius: 20px;">
+            <div class="dishname detail">Dish Name</div>
+            <div class="quantity detail">Quantity : 2</div>
+            <div class="resname detail">Total Price : Rs.300</div>
+            <div class="status detail">Status : Delivered</div>
+            <button class="clickbtn" style="height: 30px; margin: 20px; border-radius: 10px;" onclick="myFunction()">More</button>
+        </div>
+
+    </div>
+    
+    <div class="footer">
+
+
+        <div class="footer-box" id="footer-box-one">
+
+            <form class="contact-form">
+    
+                <h3 class="footer-h3"><u>Contact Us</u></h3>
+    
+                <div class="footer-form-group">
+                    <label for="name"></label>
+                    <input type="text" name="name" id="name" placeholder="Name" onkeypress="return onlyAlphabets(event,this);" required>
+                </div>
+    
+                <div class="footer-form-group">
+                    <label for="phone"></label>
+                    <input type="tel" name="phone" id="phone" placeholder="Enter 10 digit Phone Number" maxlength="10" pattern="[1-9][0-9]{9}" required>
+                </div>
+    
+                <div class="footer-form-group">
+                    <label for="message"></label>
+                    <textarea name="message" id="message" rows="4" placeholder="Message"></textarea>
+                </div>
+    
+                <button class="footer-btn" type="submit">Send</button>            
+    
+            </form>
+        </div>
+    
+        <div class="footer-box">
+    
+            <div class="footer-icons">
+    
+                <h3 class="footer-h3"><u>Follow</u></h3>
+    
+                <div class="footer-social-media">
+    
+                    <div class="footer-media">
+                        <a href="https://www.facebook.com"><img class="footer-img" src="../homepage_Images/facebook.png" alt="image"></a>
+                    </div>
+    
+                    <div class="footer-media">
+                        <a href="https://www.instagram.com"><img class="footer-img" src="../homepage_Images/instagram.png" alt="image"></a>
+                    </div>
+    
+                    <div class="footer-media">
+                        <a href="https://www.youtube.com"><img class="footer-img" src="../homepage_Images/youtube.png" alt="image"></a>
+                    </div>
+    
+                    <div class="footer-media">
+                        <a href="https://www.twitter.com"><img class="footer-img" src="../homepage_Images/twitter.png" alt="image"></a>
+                    </div>
+    
+                </div>
+    
+    
+                <h3 class="footer-h3"><u>Address</u></h3>
+    
+                <p class="footer-para">
+                    GLA University <br>
+                    281406 , Mathura <br>
+                    Uttar Pradesh 
+                </p>
+    
+            </div>
+    
+        </div>
+
+
+        
+    </div>
+</body>
+<script>
+    function myFunction() {
+        window.location.href = "detail.html";
+    }
+
+    let contactForm = document.getElementById("contactform");
+
+contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    let username = document.getElementById("name");
+    let contact_number = document.getElementById("phone");
+    let message = document.getElementById("message");
+
+    console.log(` Username - ${username.value} , Message : ${message.value} , Contact_Number : ${contact_number.value}`
+        );
+
+    username.value = "";
+    message.value ="";
+    contact_number.value="";
+    });
+
+    function onlyAlphabets(e, t) {
+            try {
+                if (window.event) {
+                    var charCode = window.event.keyCode;
+                }
+                else if (e) {
+                    var charCode = e.which;
+                }
+                else{ 
+                    return true; 
+                }
+                if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123) || charCode == 32)
+                    return true;
+                else
+                    return false;
+            }
+            catch (err) {
+                alert(err.Description);
+            }
+        }
+</script>
+</html>
